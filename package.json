@@ -2,7 +2,7 @@
   "name": "express-proxy",
   "version": "0.0.1",
   "description": "Minimal proxy server for express",
-  "keywords": [],
+  "keywords": ["proxy", "server", "express", "minimal"],
   "author": "Matt Mueller <mattmuelle@gmail.com>",
   "dependencies": {
     "express": "~3.0.0rc4"
