@@ -47,6 +47,8 @@ server.listen(8080, function() {
 });
 ```
 
+---
+
 ### GET / 
     => 'hi from index!'
 
@@ -67,6 +69,7 @@ var proxy = Proxy({
   root : __dirname,
   home : 'blog'
 });
+```
 
 By passing in the `home` option, you will tell the proxy server that `GET /` will proxy to `GET blog/`.
 
@@ -74,10 +77,8 @@ Initializing `Proxy` will return an express `app` function, that you can use to 
 
 ## Running the tests
 
-```
-npm install
-make test
-```
+    npm install
+    make test
 
 ## License 
 
