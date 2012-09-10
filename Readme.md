@@ -3,6 +3,77 @@
 
   Minimal proxy server for express
 
+## Installation
+
+    npm install express-proxy
+
+## Usage
+
+*/blog.js*
+
+```js
+var express = require('express'),
+    app = module.exports = express();
+
+app.get('/', function(req, res) {
+  res.send('hi from blog!');
+});
+
+app.post('/publish', function(req, res) {
+  res.send('successfully published');
+});
+```
+
+*/index.js*
+
+```js
+var express = require('express'),
+    app = module.exports = express();
+
+app.use(express.favicon());
+
+app.get('/', function(req, res) {
+  res.send('hi from index!');
+});
+```
+
+*/proxy.js*
+```js
+var proxy = require('../');
+    server = proxy(__dirname);
+
+server.listen(8080, function() {
+  console.log('Server started on port 8080');
+});
+```
+
+```
+GET / 
+=> 'hi from index!'
+
+GET /blog
+=> 'hi from blog!'
+
+POST /blog/publish
+=> 'successfully published!'
+```
+
+## API
+
+### Proxy(root|options)
+
+Initializes a new `Proxy` server. `root` is the only required parameter. If you pass in a string, it will assign the string to `root`. You may also pass in an options object. Some options include:
+
+```js
+var proxy = Proxy({
+  root : __dirname,
+  home : 'blog'
+});
+
+By passing in the `home` option, you will tell the proxy server that `GET /` will proxy to `GET blog/`.
+
+Initializing `Proxy` will return an express `app` function, that you can use to set up additional configuration.
+
 ## License 
 
 (The MIT License)
