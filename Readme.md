@@ -39,7 +39,7 @@ app.get('/', function(req, res) {
 
 ### /proxy.js
 ```js
-var proxy = require('../');
+var proxy = require('express-proxy');
     server = proxy(__dirname);
 
 server.listen(8080, function() {
