@@ -13,6 +13,10 @@ describe('proxy', function() {
     done();
   });
 
+  it('should have a version number', function() {
+    expect(proxy.version).to.match(/[0-9]+\.[0-9]+\.[0-9]+/);
+  });
+
   describe('.resolve(...)', function() {
     it('GET / - should resolve to index', function() {
       var path = app.proxy.resolve('/');
