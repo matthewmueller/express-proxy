@@ -74,6 +74,13 @@ By passing in the `home` option, you will tell the proxy server that `GET /` wil
 
 Initializing `Proxy` will return an express `app` function, that you can use to set up additional configuration.
 
+## Running the tests
+
+```
+npm install
+make test
+```
+
 ## License 
 
 (The MIT License)
