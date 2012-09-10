@@ -9,6 +9,16 @@
 
 ## Usage
 
+### /proxy.js
+```js
+var proxy = require('express-proxy');
+    server = proxy(__dirname);
+
+server.listen(8080, function() {
+  console.log('Server started on port 8080');
+});
+```
+
 ### /blog.js
 
 ```js
@@ -34,16 +44,6 @@ app.use(express.favicon());
 
 app.get('/', function(req, res) {
   res.send('hi from index!');
-});
-```
-
-### /proxy.js
-```js
-var proxy = require('express-proxy');
-    server = proxy(__dirname);
-
-server.listen(8080, function() {
-  console.log('Server started on port 8080');
 });
 ```
 
