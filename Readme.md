@@ -9,7 +9,7 @@
 
 ## Usage
 
-*/blog.js*
+### /blog.js
 
 ```js
 var express = require('express'),
@@ -24,7 +24,7 @@ app.post('/publish', function(req, res) {
 });
 ```
 
-*/index.js*
+### /index.js
 
 ```js
 var express = require('express'),
@@ -37,7 +37,7 @@ app.get('/', function(req, res) {
 });
 ```
 
-*/proxy.js*
+### /proxy.js
 ```js
 var proxy = require('../');
     server = proxy(__dirname);
@@ -47,20 +47,18 @@ server.listen(8080, function() {
 });
 ```
 
-```
-GET / 
-=> 'hi from index!'
+### GET / 
+    => 'hi from index!'
 
-GET /blog
-=> 'hi from blog!'
+### GET /blog
+    => 'hi from blog!'
 
-POST /blog/publish
-=> 'successfully published!'
-```
+### POST /blog/publish
+    => 'successfully published!'
 
 ## API
 
-### Proxy(root|options)
+### `Proxy(root|options)`
 
 Initializes a new `Proxy` server. `root` is the only required parameter. If you pass in a string, it will assign the string to `root`. You may also pass in an options object. Some options include:
 
